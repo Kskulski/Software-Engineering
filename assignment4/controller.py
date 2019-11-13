@@ -49,4 +49,3 @@ class Controller():
 
     def run(self):
         self.view.start()
-        'test'
