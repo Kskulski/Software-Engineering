@@ -34,9 +34,11 @@ class Controller():
         print('keystroke: {}'.format(event.keysym))
 
     def num_callback(self, num):
+        self.view.refresh(num)
         print('number {} is clicked'.format(num))
 
     def operation_callback(self, operation):
+        self.view.refresh(operation)
         print('operation: {}'.format(operation))
 
     def equal(self, event):
