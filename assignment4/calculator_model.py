@@ -48,14 +48,17 @@ class CalculatorModel:
         elif self._state == State.COLLECT_NUM2:
             self._N2 = '0'
 
-
     def get_result(self):
         return int(self._N1)
 
     def get_expr(self):
         return '{} {} {}'.format(self._N1.lstrip('0'), self._operation, self._N2.lstrip('0'))
 
-
+    def handle_equal(self):
+        if self._state == State.COLLECT_NUM2:
+            self._N1 = self._evaluate()
+            self._state == State.COLLECT_NUM1
+            self._N2 = 0
 
 if __name__ == '__main__':
     calculator = CalculatorModel()
