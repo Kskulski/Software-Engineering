@@ -1,11 +1,11 @@
 from enum import Enum
-
+from assignment5.subject import Subject
 class State(Enum):
     START = 0
     COLLECT_NUM1 = 1
     COLLECT_NUM2 = 2
 
-class CalculatorModel():
+class CalculatorModel(Subject):
     def __init__(self):
         self._N1 = '0'
         self._N2 = '0'

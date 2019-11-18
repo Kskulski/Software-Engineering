@@ -1,6 +1,7 @@
 import tkinter as Tk
+from assignment5.subject import Observer
 
-class View():
+class View(Observer):
     '''View in the MVC pattern assumes role of rendering user
     interface to the user, and maintaining an up to date view as
     it handles user interaction it receives from Controller.
