@@ -1,6 +1,5 @@
 import tkinter as Tk
 
-
 class View():
     '''View in the MVC pattern assumes role of rendering user
     interface to the user, and maintaining an up to date view as
