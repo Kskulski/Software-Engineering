@@ -23,8 +23,6 @@ class Controller():
         self.view.div.bind("<Button>", lambda event, op='/': self.operation_callback(op))
         self.view.equal.bind("<Button>", self.equal)
         self.view.clear.bind("<Button>", self.clear)
-
-
         self.view.attach_keyboard(self.keystroke_callback)
 
     def keystroke_callback(self, event):

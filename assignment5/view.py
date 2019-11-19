@@ -1,6 +1,7 @@
 import tkinter as Tk
+from subject.py import Observer
 
-class View():
+class View(Observer):
     '''View in the MVC pattern assumes role of rendering user
     interface to the user, and maintaining an up to date view as
     it handles user interaction it receives from Controller.
@@ -72,9 +73,11 @@ class View():
         self._add_numbers_keypad(self._frame)
         self._add_operations_keypad(self._frame)
 
+    def update(self):
+        self.display.config(text=value)
 
     def refresh(self, value):
-        self.display.config(text= value)
+        self.display.config(text=value)
 
     def attach_keyboard(self, callback):
         self.root.bind("<Key>", callback)

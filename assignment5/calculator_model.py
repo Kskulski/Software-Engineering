@@ -1,16 +1,21 @@
 from enum import Enum
+from subject.py import Subject
 
 class State(Enum):
     START = 0
     COLLECT_NUM1 = 1
     COLLECT_NUM2 = 2
 
-class CalculatorModel():
+class CalculatorModel(Subject):
     def __init__(self):
         self._N1 = '0'
         self._N2 = '0'
         self._operation = None
         self._state = State.START
+
+    def attach(self, observer: Observer) -> None:
+        self.append(observer)
+        pass
 
     def _evaluate(self):
         return eval('{} {} {}'.format(int(self._N1), self._operation, int(self._N2)))
