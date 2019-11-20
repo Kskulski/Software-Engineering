@@ -1,10 +1,12 @@
 from enum import Enum
 from subject.py import Subject
 
+
 class State(Enum):
     START = 0
     COLLECT_NUM1 = 1
     COLLECT_NUM2 = 2
+
 
 class CalculatorModel(Subject):
     def __init__(self):
