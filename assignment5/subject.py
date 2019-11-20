@@ -13,7 +13,7 @@ class Subject(ABC):
         '''used by observers to register for state changes'''
         pass
 
-    def detach(self, observer:Observer)->None:
+    def detach(self, observer: Observer) -> None:
         '''used by observers to de-register'''
         pass
 

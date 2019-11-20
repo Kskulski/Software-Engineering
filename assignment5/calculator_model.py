@@ -1,11 +1,20 @@
 from enum import Enum
+<<<<<<< HEAD
 from assignment5.subject import Subject
+=======
+from subject.py import Subject
+
+>>>>>>> 8c64d1c319c2e805cd0f21895f34bb214f5f6baa
 
 class State(Enum):
     START = 0
     COLLECT_NUM1 = 1
     COLLECT_NUM2 = 2
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8c64d1c319c2e805cd0f21895f34bb214f5f6baa
 class CalculatorModel(Subject):
     def __init__(self):
         self._N1 = '0'
@@ -13,6 +22,10 @@ class CalculatorModel(Subject):
         self._operation = None
         self._state = State.START
         Subject.attach(self)
+
+    def attach(self, observer: Observer) -> None:
+        self.append(observer)
+        pass
 
     def _evaluate(self):
         return eval('{} {} {}'.format(int(self._N1), self._operation, int(self._N2)))

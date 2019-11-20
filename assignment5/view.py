@@ -1,5 +1,9 @@
 import tkinter as Tk
+<<<<<<< HEAD
 from assignment5.subject import Observer
+=======
+from subject.py import Observer
+>>>>>>> 8c64d1c319c2e805cd0f21895f34bb214f5f6baa
 
 class View(Observer):
     '''View in the MVC pattern assumes role of rendering user
@@ -73,12 +77,17 @@ class View(Observer):
         self._add_numbers_keypad(self._frame)
         self._add_operations_keypad(self._frame)
 
+    def update(self):
+        self.display.config(text=value)
 
     def refresh(self, value):
         self.display.config(text=value)
+<<<<<<< HEAD
 
     def update(self, value):
         self.display.config(text=value)
+=======
+>>>>>>> 8c64d1c319c2e805cd0f21895f34bb214f5f6baa
 
     def attach_keyboard(self, callback):
         self.root.bind("<Key>", callback)
