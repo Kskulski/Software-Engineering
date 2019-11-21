@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 class Observer(ABC):
     @abstractmethod
-    def update(self):
+    def update(self, value):
         '''callback to be called when subject changes state'''
         pass
 

@@ -1,5 +1,3 @@
-from Assignment5.subject import Subject
-
 class Controller():
     '''Controller is the primary coordinator in the MVC patter, it collects
     user input, ininitiates necessary changes to model (data), and refreshes
@@ -35,26 +33,18 @@ class Controller():
 
     def num_callback(self, num):
         self.model.handle_digit(str(num))
-        value = self.model.get_result()
-        self.view.refresh(value)
         print('number {} is clicked'.format(num))
 
     def operation_callback(self, operation):
         self.model.handle_operation(operation)
-        value = self.model.get_result()
-        self.view.refresh(value)
         print('operation: {}'.format(operation))
 
     def equal(self, event):
         self.model.handle_equal()
-        value = self.model.get_result()
-        self.view.refresh(value)
         print('equal pressed')
 
     def clear(self, event):
         self.model.handle_CE()
-        value = self.model.get_result()
-        self.view.refresh(value)
         print('clear pressed')
 
     def run(self):
