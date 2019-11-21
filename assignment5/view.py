@@ -1,4 +1,5 @@
 import tkinter as Tk
+from Assignment5.subject import Observer
 
 class View():
     '''View in the MVC pattern assumes role of rendering user

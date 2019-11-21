@@ -1,3 +1,5 @@
+from Assignment5.subject import Subject
+
 class Controller():
     '''Controller is the primary coordinator in the MVC patter, it collects
     user input, ininitiates necessary changes to model (data), and refreshes
