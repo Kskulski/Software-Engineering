@@ -1,31 +1,28 @@
 from enum import Enum
-<<<<<<< HEAD
 from assignment5.subject import Subject
-=======
-from subject.py import Subject
+from typing import List
 
->>>>>>> 8c64d1c319c2e805cd0f21895f34bb214f5f6baa
 
 class State(Enum):
     START = 0
     COLLECT_NUM1 = 1
     COLLECT_NUM2 = 2
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8c64d1c319c2e805cd0f21895f34bb214f5f6baa
 class CalculatorModel(Subject):
     def __init__(self):
         self._N1 = '0'
         self._N2 = '0'
         self._operation = None
         self._state = State.START
-        Subject.attach(self)
+        self._observers = []
 
-    def attach(self, observer: Observer) -> None:
-        self.append(observer)
-        pass
+    def attach(self, observer) -> None:
+        self._observers.append(observer)
+
+    def notify(self):
+        for obs in self._observers:
+            obs.update(self.get_result())
 
     def _evaluate(self):
         return eval('{} {} {}'.format(int(self._N1), self._operation, int(self._N2)))
@@ -41,6 +38,7 @@ class CalculatorModel(Subject):
 
         elif self._state == State.COLLECT_NUM2:
             self._N2 += d
+        self.notify()
 
     def handle_operation(self, operation: str):
         if operation not in '+-*/':
@@ -56,6 +54,7 @@ class CalculatorModel(Subject):
             self._N1 = str(self._evaluate())
             self._operation = operation
             self._N2 = '0'
+        self.notify()
 
     def handle_CE(self):
         if self._state == State.COLLECT_NUM1:
@@ -63,6 +62,7 @@ class CalculatorModel(Subject):
 
         elif self._state == State.COLLECT_NUM2:
             self._N2 = '0'
+        self.notify()
 
     def get_result(self):
         return int(self._N1)
@@ -75,6 +75,7 @@ class CalculatorModel(Subject):
             self._N1 = self._evaluate()
             self._state == State.COLLECT_NUM1
             self._N2 = 0
+        self.notify()
 
 if __name__ == '__main__':
     calculator = CalculatorModel()
