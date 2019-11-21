@@ -1,6 +1,6 @@
 from unittest import TestCase
 from unittest.mock import patch
-from math import Math
+from Assignment6.mathtest import Math
 
 
 class TestCalculator(TestCase):
@@ -24,6 +24,9 @@ class TestCalculator(TestCase):
 
 
 if __name__ == '__main__':
-    math = Math()
-    weather = weather_client.get_weather_by_zip(zip_code='60564')
-    print(weather)
+    test = TestCalculator()
+    test.setUp()
+    test.test_add()
+    test.test_divide()
+    test.test_division_by_zero_throws_exception()
+    test.test_print_dep()

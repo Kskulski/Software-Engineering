@@ -73,9 +73,6 @@ class View(Observer):
         self._add_numbers_keypad(self._frame)
         self._add_operations_keypad(self._frame)
 
-    def refresh(self, value):
-        self.display.config(text=value)
-
     def update(self, value):
         self.display.config(text=value)
 
