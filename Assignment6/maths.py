@@ -1,4 +1,7 @@
-class Math:
+import math
+
+
+class Maths:
     def is_prime(self, num):
         if num < 0:
             raise(ValueError())
@@ -30,12 +33,18 @@ class Math:
     def factorial(self, n):
         '''calculates n! = 1 * 2 * 3 * ... * n'''
         prod = 1
-        for i in range(1, n):
-            prod *= i
+        if n < 0:
+            n = abs(n)
+            for i in range(1, n+1):
+                prod *= i
+            prod = prod*-1
+        else:
+            for i in range(1, n+1):
+                prod *= i
         return prod
 
     def is_even(self, a):
-        return a % 2 == 0
+        return math.floor(a % 2) == 0
 
     def sub_and_print(self, a, b):
         print('result is : {}'.format(a-b))
