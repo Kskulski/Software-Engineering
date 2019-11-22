@@ -10,6 +10,8 @@ class SquareTest(unittest.TestCase):
 		self.assertEqual(self.sq.area(), 25, "negative side length")
 		self.sq = Square(0)
 		self.assertEqual(self.sq.area(), 0, "zero side length")
+		self.sq = Square(5.5)
+		self.assertEqual(self.sq.area(), 30.25, "decimal side length")
 
 
 if __name__ == '__main__':
