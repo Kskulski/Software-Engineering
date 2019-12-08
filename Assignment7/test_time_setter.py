@@ -1,5 +1,5 @@
 import unittest
-from rf_time_setter import TimeSetter
+from time_setter import TimeSetter
 
 class TimeSetterTest(unittest.TestCase):
     def setUp(self):
